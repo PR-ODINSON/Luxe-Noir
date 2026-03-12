@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Noir Luxe - Premium Artisan Chocolate">
+    <title>Noir Luxe | Premium Artisan Chocolate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        // Apply theme early to prevent flash
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Noir Luxe</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#craft">Craftsmanship</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions" style="display: flex; gap: var(--spacing-3); align-items: center;">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="#shop" class="btn btn-outline">Shop Now</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" aria-label="Introduction">
+            <!-- Background Image Sequence Canvas -->
+            <canvas id="hero-canvas" class="hero-bg"></canvas>
+            <div class="hero-overlay"></div>
+            
+            <div class="container hero-content">
+                <h1 class="hero-headline fade-in-up">Indulge in <br/><span class="text-gold">Pure Elegance</span></h1>
+                <p class="hero-subheadline fade-in-up delay-1">Handcrafted artisan chocolates made with the world's finest cocoa and delicate gold leaf.</p>
+                <div class="hero-actions fade-in-up delay-2">
+                    <a href="#shop" class="btn btn-primary">Discover the Collection</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features (Craftsmanship) Section -->
+        <section id="craft" class="features section-padding" aria-labelledby="craft-heading">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="features-text fade-in-up">
+                        <span class="subtitle">The Art of Chocolate</span>
+                        <h2 id="craft-heading" class="section-title">Masterful <span class="text-gold">Craftsmanship</span></h2>
+                        <p class="section-desc">Every piece of Noir Luxe chocolate is a work of art. Our master chocolatiers blend rich, ethically sourced cocoa with avant-garde flavors, crafting each truffle by hand to ensure a transcendent tasting experience.</p>
+                        
+                        <ul class="feature-list">
+                            <li>
+                                <div class="feature-icon">✨</div>
+                                <div>
+                                    <h3>Single-Origin Criollo Cocoa</h3>
+                                    <p>Sourced exclusively from sustainable micro-farms in the heart of Venezuela for an unparalleled complexity of flavor.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-icon">✨</div>
+                                <div>
+                                    <h3>Hand-Painted Details</h3>
+                                    <p>Adorned with delicate 24k edible gold leaf.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-icon">✨</div>
+                                <div>
+                                    <h3>Triple-Tempered Perfection</h3>
+                                    <p>Our arduous proprietary tempering process ensures a devastatingly crisp snap and an immediate, velvet-smooth melt.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="features-image fade-in-up delay-1">
+                        <img src="images/feature.png" alt="Chocolatier crafting luxury truffles" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials section-padding bg-secondary" aria-labelledby="testimonials-heading">
+            <div class="container text-center">
+                <span class="subtitle">Connoisseur Reviews</span>
+                <h2 id="testimonials-heading" class="section-title">Whispers of <span class="text-gold">Decadence</span></h2>
+                
+                <div class="testimonials-grid">
+                    <article class="testimonial-card fade-in-up">
+                        <div class="stars">★★★★★</div>
+                        <blockquote class="testimonial-quote">
+                            "Noir Luxe isn't just chocolate; it's a sensory revelation. The rich truffle literally melted instantly, leaving a beautiful, complex finish that lingered for hours."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <strong>Isabella R.</strong>
+                            <span>Michelin-Starred Pastry Chef</span>
+                        </div>
+                    </article>
+                    <article class="testimonial-card fade-in-up delay-1">
+                        <div class="stars">★★★★★</div>
+                        <blockquote class="testimonial-quote">
+                            "The 24k gold detailing on the dark chocolate is breathtaking. It's my go-to gift when I need to make an unforgettable impression."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <strong>Julian M.</strong>
+                            <span>Art Director</span>
+                        </div>
+                    </article>
+                    <article class="testimonial-card fade-in-up delay-2">
+                        <div class="stars">★★★★★</div>
+                        <blockquote class="testimonial-quote">
+                            "The perfect balance of bitter cocoa and subtle sweetness. You can taste the obsessive dedication and mastery in every single handcrafted piece."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <strong>Eleanor W.</strong>
+                            <span>Lead Food Editor, Global Gastronomy</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section id="shop" class="cta section-padding text-center" aria-labelledby="cta-heading">
+            <div class="container">
+                <h2 id="cta-heading" class="section-title">Elevate Your <span class="text-gold">Senses</span></h2>
+                <p class="section-desc mx-auto">Join the exclusive world of Noir Luxe. Explore our signature collections or curate your own bespoke box.</p>
+                <div class="cta-actions mt-32">
+                    <a href="#" class="btn btn-primary">Shop the Signature Box</a>
+                    <a href="#" class="btn btn-outline">Explore Gifts</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-secondary">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">Noir Luxe</a>
+                <p>Purveyors of fine artisan chocolates.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="#">The Signature Box</a></li>
+                    <li><a href="#">Gold Leaf Truffles</a></li>
+                    <li><a href="#">Vegan Dark</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Noir Luxe Chocolates. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.querySelector('.sun-icon');
+        const moonIcon = document.querySelector('.moon-icon');
+        const root = document.documentElement;
+
+        function setTheme(theme) {
+            root.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            
+            if (theme === 'light') {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            } else {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            }
+        }
+
+        // Initialize icons based on current theme
+        const currentTheme = root.getAttribute('data-theme');
+        if (currentTheme === 'light') {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+        } else {
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+
+        // Simple Intersection Observer for fade-in animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                // If user prefers reduced motion, add visible immediately
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    el.classList.add('visible');
+                } else {
+                    observer.observe(el);
+                }
+            });
+
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+
+        // Hero Image Sequence Animation
+        const canvas = document.getElementById('hero-canvas');
+        const context = canvas.getContext('2d');
+        const frameCount = 40;
+        const currentFrame = index => `images/HeroAnimation/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`;
+
+        const images = [];
+        let currentImageIndex = 0;
+
+        for (let i = 1; i <= frameCount; i++) {
+            const img = new Image();
+            img.src = currentFrame(i);
+            images.push(img);
+        }
+
+        // Initialize canvas when the first image loads
+        images[0].onload = () => {
+            canvas.width = images[0].width;
+            canvas.height = images[0].height;
+            startAnimation();
+        };
+
+        function startAnimation() {
+            let fps = 8; // Slower, smoother animation rate
+            let interval = 1000 / fps;
+            let then = Date.now();
+
+            function render() {
+                requestAnimationFrame(render);
+
+                // Accessibility check: Stop animation if reduced motion is preferred
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    context.drawImage(images[0], 0, 0);
+                    return; // Stop the loop
+                }
+
+                const now = Date.now();
+                const elapsed = now - then;
+
+                if (elapsed > interval) {
+                    then = now - (elapsed % interval);
+                    
+                    if (images[currentImageIndex] && images[currentImageIndex].complete) {
+                        context.clearRect(0, 0, canvas.width, canvas.height);
+                        context.drawImage(images[currentImageIndex], 0, 0);
+                    }
+                    
+                    currentImageIndex = (currentImageIndex + 1) % frameCount;
+                }
+            }
+            render();
+        }
+    </script>
+</body>
+</html>
