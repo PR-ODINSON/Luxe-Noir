@@ -56,7 +56,7 @@ html {
   
   --nav-bg: rgba(248, 245, 239, 0.6);
   --nav-bg-scrolled: rgba(248, 245, 239, 0.85);
-  --hero-overlay: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 50%, rgba(248, 245, 239, 1) 100%); /* Improved contrast for light theme hero */
+  --hero-overlay: linear-gradient(to bottom, rgba(14, 14, 16, 0.4) 0%, rgba(14, 14, 16, 0.7) 50%, rgba(248, 245, 239, 1) 100%);
 }
 
 /* Base Body Styles */
@@ -409,19 +409,26 @@ section {
   text-shadow: 0 4px 24px rgba(0,0,0,0.8);
   line-height: 1.1;
   letter-spacing: -0.02em;
-}
-
-[data-theme="light"] .hero-headline {
-  text-shadow: 0 4px 16px rgba(0,0,0,0.6); /* Extra shadowing to ensure readability on bright scenes */
-  color: #FFFFFF; /* Ensure text remains readable even in light theme */
+  color: #F2F2F3; /* Force dark theme text */
 }
 
 .hero-subheadline {
   font-size: clamp(0.9375rem, 2vw, 1.125rem);
-  color: var(--text-secondary);
+  color: #A8A8AC; /* Force dark theme text */
   margin-bottom: var(--spacing-6);
   max-width: 500px;
   line-height: 1.6;
+}
+
+/* Force dark theme button styling inside hero for light mode */
+[data-theme="light"] .hero .btn-primary {
+  background-color: #D4AF37;
+  color: #111;
+}
+
+[data-theme="light"] .hero .btn-primary:hover {
+  background-color: #b8972e;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);
 }
 
 .hero-actions {
