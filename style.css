@@ -157,6 +157,12 @@ section {
   padding: 0 var(--spacing-4);
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-3);
+  }
+}
+
 .section-padding {
   padding: 80px 0; /* Updated standard vertical rhythm desktop */
 }
@@ -318,6 +324,14 @@ section {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .nav-links a {
+    font-size: 1.125rem;
+    padding: var(--spacing-2) 0;
+    display: inline-block;
+  }
 }
 
 /* Theme Toggle */
@@ -806,8 +820,21 @@ section {
 }
 
 @media (max-width: 768px) {
-  .mobile-menu-btn {
-    display: block;
+  .navbar .container {
+    flex-wrap: wrap;
+  }
+
+  .logo { order: 1; }
+  .mobile-menu-btn { order: 3; display: block; margin-left: 0; }
+  
+  .nav-actions {
+    order: 2;
+    margin-left: auto;
+    margin-right: var(--spacing-2);
+  }
+
+  .nav-actions .btn {
+    display: none; /* Hide "Shop Now" top button on mobile to save space */
   }
   
   .nav-links {
@@ -820,15 +847,12 @@ section {
     background: var(--nav-bg-scrolled);
     padding: var(--spacing-4);
     border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    gap: var(--spacing-4);
   }
   
   .nav-links.active {
     display: flex;
-  }
-
-  .nav-actions {
-    margin-left: auto;
-    margin-right: var(--spacing-3);
   }
   
   .collection-grid {
@@ -837,6 +861,7 @@ section {
 
   .features-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-6);
   }
 
   .origin-grid {
@@ -859,9 +884,22 @@ section {
   .hero-content {
     text-align: center;
     margin: 0 auto;
+    padding: 0 var(--spacing-2);
   }
   
   .hero-actions {
     justify-content: center;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
   }
 }
