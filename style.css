@@ -56,7 +56,7 @@ html {
   
   --nav-bg: rgba(248, 245, 239, 0.6);
   --nav-bg-scrolled: rgba(248, 245, 239, 0.85);
-  --hero-overlay: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(248, 245, 239, 0.7) 50%, rgba(248, 245, 239, 1) 100%);
+  --hero-overlay: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 50%, rgba(248, 245, 239, 1) 100%); /* Improved contrast for light theme hero */
 }
 
 /* Base Body Styles */
@@ -65,7 +65,7 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6; /* Refined readability */
-  font-size: clamp(0.9375rem, 1.5vw, 1.125rem); /* Typography Scaling for Body */
+  font-size: 18px; /* Desktop Body */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color var(--transition-normal), color var(--transition-normal);
@@ -157,27 +157,13 @@ section {
   padding: 0 var(--spacing-4);
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding: 0 var(--spacing-3);
-  }
-}
+
 
 .section-padding {
   padding: 80px 0; /* Updated standard vertical rhythm desktop */
 }
 
-@media (max-width: 1024px) {
-  .section-padding {
-    padding: 56px 0; /* Tablet rhythm */
-  }
-}
 
-@media (max-width: 768px) {
-  .section-padding {
-    padding: 40px 0; /* Mobile rhythm */
-  }
-}
 
 .bg-secondary {
   background-color: var(--bg-secondary);
@@ -326,13 +312,7 @@ section {
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  .nav-links a {
-    font-size: 1.125rem;
-    padding: var(--spacing-2) 0;
-    display: inline-block;
-  }
-}
+
 
 /* Theme Toggle */
 .theme-toggle {
@@ -424,7 +404,7 @@ section {
 }
 
 .hero-headline {
-  font-size: clamp(2.25rem, 5vw, 4rem); 
+  font-size: 64px; 
   margin-bottom: var(--spacing-3);
   text-shadow: 0 4px 24px rgba(0,0,0,0.8);
   line-height: 1.1;
@@ -432,7 +412,8 @@ section {
 }
 
 [data-theme="light"] .hero-headline {
-  text-shadow: 0 2px 12px rgba(255,255,255,0.9);
+  text-shadow: 0 4px 16px rgba(0,0,0,0.6); /* Extra shadowing to ensure readability on bright scenes */
+  color: #FFFFFF; /* Ensure text remains readable even in light theme */
 }
 
 .hero-subheadline {
@@ -461,7 +442,7 @@ section {
 }
 
 .section-title {
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: 36px;
   margin-bottom: var(--spacing-4);
   letter-spacing: -0.01em;
 }
@@ -808,24 +789,69 @@ section {
   }
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
+/* =========================================================================
+   RESPONSIVE BREAKPOINT SYSTEM
+   ========================================================================= */
+
+/* LAPTOP (769px - 1280px) */
+@media (max-width: 1280px) {
+  .collection-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .origin-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* TABLET (481px - 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-3);
+  }
+
+  .section-padding {
+    padding: 56px 0; /* Tablet rhythm */
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .hero-headline {
+    font-size: 48px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
   .collection-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .origin-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
   }
-}
 
-@media (max-width: 768px) {
+  .origin-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .navbar .container {
     flex-wrap: wrap;
   }
 
-  .logo { order: 1; }
-  .mobile-menu-btn { order: 3; display: block; margin-left: 0; }
+  .logo { 
+    order: 1; 
+  }
+
+  .mobile-menu-btn { 
+    order: 3; 
+    display: block; 
+    margin-left: 0; 
+  }
   
   .nav-actions {
     order: 2;
@@ -834,7 +860,7 @@ section {
   }
 
   .nav-actions .btn {
-    display: none; /* Hide "Shop Now" top button on mobile to save space */
+    display: none; /* Hide "Shop Now" on mobile */
   }
   
   .nav-links {
@@ -854,14 +880,49 @@ section {
   .nav-links.active {
     display: flex;
   }
-  
-  .collection-grid {
-    grid-template-columns: 1fr;
+
+  .nav-links a {
+    font-size: 1.125rem;
+    padding: var(--spacing-2) 0;
+    display: inline-block;
+    min-height: 44px; /* Touch target */
   }
 
-  .features-grid {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .hero-content {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 var(--spacing-2);
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+}
+
+/* MOBILE LARGE (376px - 480px) */
+@media (max-width: 480px) {
+  .section-padding {
+    padding: 40px 0; /* Mobile rhythm */
+  }
+
+  body {
+    font-size: 15px; /* Mobile Body */
+  }
+
+  .hero-headline {
+    font-size: 36px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .collection-grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-6);
   }
 
   .origin-grid {
@@ -876,30 +937,55 @@ section {
   .origin-card:last-child {
     border-bottom: none;
   }
-  
+
   .footer-content {
     grid-template-columns: 1fr;
-  }
-  
-  .hero-content {
     text-align: center;
-    margin: 0 auto;
-    padding: 0 var(--spacing-2);
   }
-  
-  .hero-actions {
-    justify-content: center;
+
+  .footer-content ul {
+    align-items: center;
   }
 
   .testimonials-grid {
     grid-template-columns: 1fr;
   }
+  
+  .testimonial-author-row {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-2);
+  }
+  
+  /* Ensure logo fits on very narrow screens */
+  .logo {
+    font-size: 1.25rem;
+  }
+}
 
-  .hero-headline {
-    font-size: 2.5rem;
+/* MOBILE SMALL (320px - 375px) */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 var(--spacing-2);
   }
 
-  .section-title {
-    font-size: 2rem;
+  .hero-headline {
+    font-size: 32px; /* Slightly smaller for very small screens */
+  }
+
+  .btn {
+    width: 100%; /* Full width buttons to avoid overflow */
+    margin-bottom: var(--spacing-2);
+  }
+
+  .gift-banner .btn {
+    margin-left: 0 !important;
+  }
+  
+  .gift-banner .mt-32 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
   }
 }
