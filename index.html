@@ -24,6 +24,9 @@
     <header class="navbar">
         <div class="container">
             <a href="#" class="logo">Noir Luxe</a>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#about">Our Story</a></li>
@@ -292,6 +295,21 @@
         themeToggle.addEventListener('click', () => {
             const newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             setTheme(newTheme);
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
         });
 
         // Simple Intersection Observer for fade-in animations
