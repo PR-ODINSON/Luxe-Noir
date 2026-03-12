@@ -4,21 +4,21 @@ A perfectly responsive, production-ready landing page for a luxury artisan choco
 
 ## 📸 Screenshots
 
-### Desktop View / Hero Section
-![Desktop View - Hero](images/hero.png)
-
-### The Signature Collection
 <div align="center">
-  <img src="images/signature-1.png" width="24%" alt="Signature 1">
-  <img src="images/signature-2.png" width="24%" alt="Signature 2">
-  <img src="images/signature-3.png" width="24%" alt="Signature 3">
-  <img src="images/signature-4.png" width="24%" alt="Signature 4">
+  <img src="C:\Users\HP\.gemini\antigravity\brain\77106ba9-b3ed-4c5a-a979-51985f96b543\luxenoir_dark_theme_1773336559338.png" alt="Luxe Noir Desktop Concept">
+  <br/><br/>
+  
+  <blockquote>
+    <p><em>"A visual aesthetic matching the luxury of the chocolate itself."</em></p>
+  </blockquote>
+  
+  <p>
+    This project is designed to be experienced live. The deep dark cinematic themes, gold foil accents, and fluid layouts are best viewed in the browser. 
+  </p>
+  
+  <strong>🔗 <a href="#">View Live Demo here (coming soon)</a></strong>
+  <br/><br/>
 </div>
-
-### Craftsmanship & Features
-![Features](images/feature.png)
-
-*(Note: Replace the images above with full-page screenshots if you wish to showcase the entire page layout!)*
 
 ---
 
